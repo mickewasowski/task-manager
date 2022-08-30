@@ -5,9 +5,8 @@ import {createTodo} from '../../redux-store/actions/TodoActions';
 
 
 function CreateTodo(){
-    const id = uuid();
     const initialState = {
-        id,
+        id: null,
         label: '',
         description: '',
         status: 'no status'
@@ -26,6 +25,10 @@ function CreateTodo(){
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        let id = uuid();
+        setFormInfo(prevState => { return {...prevState, id}});
+        console.log(formInfo);
 
         if (formInfo.label !== '' && formInfo.description !== '') {
             dispatch(createTodo(formInfo));

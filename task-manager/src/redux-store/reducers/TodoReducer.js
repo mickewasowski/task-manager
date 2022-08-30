@@ -8,16 +8,17 @@ const todoReducer = (state = [], action) => {
                 ...state,
                 action.payload
             ]
-        case TodoItems.SET_IN_PROGRESS:
+        case TodoItems.SET_IN_PROGRESS:            
             let setInProgress = state.find(x => x.id === action.payload);
             setInProgress.status = 'in progress';
+            
+            return [...state];
 
-            return state;
         case TodoItems.SET_COMPLETE:
             let setComplete = state.find(x => x.id === action.payload);
             setComplete.status = 'done';
 
-            return state;
+            return [...state];
         default:
             return state;
     }
