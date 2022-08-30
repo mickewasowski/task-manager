@@ -1,13 +1,14 @@
 import Todo from '../../todo-component/Todo';
+import { Wrapper, Heading} from './TodoInProgress.styles';
 
 function TodosInProgress({todos}){
     return(
-        <div>
-            <h2>In Progress</h2>
+        <Wrapper>
+            <Heading>In Progress</Heading>
             {
                 todos.map(x => <Todo key={x.id} id={x.id} label={x.label} description={x.description} status={x.status} buttonText={"Set Complete"} />)
             }
-        </div>
+        </Wrapper>
     )
 }
 
