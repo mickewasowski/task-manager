@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import Initial from "./todo-initial/Initial";
 import TodosInProgress from "./todo-in-progress/TodosInProgress";
 import TodosComplete from "./todo-complete/TodosComplete";
-import {useEffect} from 'react';
+import {Wrapper} from './TodoList.styles';
 
 function TodoList(){
     let allTodos = useSelector(state => state.todo);
@@ -11,11 +11,11 @@ function TodoList(){
     let done = allTodos.filter(x => x.status === 'done');
     
     return(
-        <div>
+        <Wrapper>
             <Initial todos={initial}/>
             <TodosInProgress todos={inProgress}/>
             <TodosComplete todos={done}/>
-        </div>
+        </Wrapper>
     )
 }
 
