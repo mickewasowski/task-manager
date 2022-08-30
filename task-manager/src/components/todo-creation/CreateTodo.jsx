@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuid } from 'uuid';
 import {createTodo} from '../../redux-store/actions/TodoActions';
-
-
+import {Form, InputWrapper, Input, TextArea, Dropdown, SubmitBtn} from './CreateTodo.styles';
+ 
 function CreateTodo(){
     const initialState = {
         id: null,
@@ -41,24 +41,24 @@ function CreateTodo(){
 
 
     return(
-        <form>
-            <div>
+        <Form>
+            <InputWrapper>
                 <label htmlFor='label'>Label:</label>
-                <input type='text' name='label' onChange={handleInputChange} value={formInfo.label} required/>
-            </div>
-            <div>
+                <Input type='text' name='label' onChange={handleInputChange} value={formInfo.label} required/>
+            </InputWrapper>
+            <InputWrapper>
                 <label htmlFor='description'>Description:</label>
-                <textarea type='text' name='description' onChange={handleInputChange} value={formInfo.description} required/>
-            </div>
-            <div>
+                <TextArea type='text' name='description' onChange={handleInputChange} value={formInfo.description} required/>
+            </InputWrapper>
+            <InputWrapper>
                 <label htmlFor='status'>Status:</label>
-                <select name='status' onChange={handleInputChange}>
+                <Dropdown name='status' onChange={handleInputChange}>
                     <option value='no status'>No status</option>
                     <option value='to do'>To do</option>
-                </select>
-            </div>
-            <input type="submit" onClick={handleSubmit}/>
-        </form>
+                </Dropdown>
+            </InputWrapper>
+            <SubmitBtn type="submit" onClick={handleSubmit}/>
+        </Form>
     )
 }
 

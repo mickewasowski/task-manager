@@ -4,7 +4,7 @@ import TodoList from "./components/todo-list-component/TodoList"
 function App() {
 
   return (
-    <div className="App">
+    <div style={{width: '100%', height: '100vh',display: 'flex', flexDirection: 'row', alignItems: 'flex-start'}}>
       <CreateTodo />
       <TodoList />
     </div>

@@ -13,8 +13,7 @@
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.2",
     "redux": "^4.2.0",
-    "tailwind": "^4.0.0",
-    "tailwind-styled-components": "^2.1.8",
+    "styled-components": "^5.3.5",
     "uuidv4": "^6.2.13"
   },
   "devDependencies": {
