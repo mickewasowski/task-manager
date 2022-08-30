@@ -5,6 +5,8 @@ export const Wrapper = styled.div`
     margin: .7rem .7rem;
     width: 30%;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
 `
 
 export const Heading = styled.h2`

@@ -1,8 +1,13 @@
 import { useDispatch } from 'react-redux';
 import {setComplete, setInProgress} from '../../redux-store/actions/TodoActions';
+import {Wrapper, Button} from './Todo.styles';
 
-function Todo({id, label, description, status, buttonText, changeStatus}){
+function Todo({id, label, description, status, buttonText}){
     const dispatch = useDispatch();
+
+    const todoBackgroundColor = (status === 'no status' || status === 'to do') ? {backgroundColor: '#D5ECFD'} : (status === 'in progress') ? {backgroundColor: '#F9E7A8'} : {backgroundColor: '#A8F7AA'}
+
+    const buttonBg = (status === 'no status' || status === 'to do') ? {backgroundColor: '#F07113'} : (status === 'in progress') ? {backgroundColor: '#2FBC23'} : {backgroundColor: ''}
 
     const handleSetComplete = () => {
         dispatch(setComplete(id));
@@ -21,7 +26,7 @@ function Todo({id, label, description, status, buttonText, changeStatus}){
     }
 
     return(
-        <div id={id}>
+        <Wrapper id={id} style={todoBackgroundColor}>
             <div>
                 <h3>{label}</h3>
             </div>
@@ -31,9 +36,9 @@ function Todo({id, label, description, status, buttonText, changeStatus}){
             {
                 buttonText === ''
                 ? ''
-                : <button onClick={handleClick}>{buttonText}</button>
+                : <Button style={buttonBg} onClick={handleClick}>{buttonText}</Button>
             }
-        </div>
+        </Wrapper>
     )
 }
 
