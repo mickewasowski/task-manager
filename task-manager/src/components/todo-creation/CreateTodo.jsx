@@ -19,22 +19,24 @@ function CreateTodo(){
     const handleInputChange = (e) => {
         let {name, value} = e.target;
 
-        setFormInfo(prevState => {return {...prevState, [name]: value}});
+        if (formInfo.id === null) {
+            setFormInfo(prevState => { return {...prevState,[name]: value, id: uuid()}});
+        }else{
+            setFormInfo(prevState => {return {...prevState, [name]: value}});
+        }
+
     }
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        let id = uuid();
-        setFormInfo(prevState => { return {...prevState, id}});
-        console.log(formInfo);
-
         if (formInfo.label !== '' && formInfo.description !== '') {
             dispatch(createTodo(formInfo));
         }else{
             alert("Label and Description fields are mandatory")
         }
+        setFormInfo(initialState);
     }
 
 
@@ -42,11 +44,11 @@ function CreateTodo(){
         <form>
             <div>
                 <label htmlFor='label'>Label:</label>
-                <input type='text' name='label' onChange={handleInputChange} required/>
+                <input type='text' name='label' onChange={handleInputChange} value={formInfo.label} required/>
             </div>
             <div>
                 <label htmlFor='description'>Description:</label>
-                <textarea type='text' name='description' onChange={handleInputChange} required/>
+                <textarea type='text' name='description' onChange={handleInputChange} value={formInfo.description} required/>
             </div>
             <div>
                 <label htmlFor='status'>Status:</label>
