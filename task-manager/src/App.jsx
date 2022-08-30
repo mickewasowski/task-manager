@@ -1,9 +1,10 @@
+import CreateTodo from "./components/todo-creation/CreateTodo"
 
 function App() {
 
   return (
     <div className="App">
-      hi
+      <CreateTodo />
     </div>
   )
 }
