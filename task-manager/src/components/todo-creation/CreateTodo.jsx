@@ -42,22 +42,22 @@ function CreateTodo(){
 
     return(
         <Form>
-            <InputWrapper>
+            <InputWrapper style={{gridRow: '1 / span 1', gridColumn: '1 / span 6'}}>
                 <label htmlFor='label'>Label:</label>
                 <Input type='text' name='label' onChange={handleInputChange} value={formInfo.label} required/>
             </InputWrapper>
-            <InputWrapper>
+            <InputWrapper style={{gridRow: '2 / span 3', gridColumn: '1 / span 6'}}>
                 <label htmlFor='description'>Description:</label>
                 <TextArea type='text' name='description' onChange={handleInputChange} value={formInfo.description} required/>
             </InputWrapper>
-            <InputWrapper>
+            <InputWrapper style={{gridRow: '5 / span 1', gridColumn: '1 / span 6'}}>
                 <label htmlFor='status'>Status:</label>
                 <Dropdown name='status' onChange={handleInputChange}>
                     <option value='no status'>No status</option>
                     <option value='to do'>To do</option>
                 </Dropdown>
             </InputWrapper>
-            <SubmitBtn type="submit" onClick={handleSubmit}/>
+            <SubmitBtn type="submit" style={{gridRow: '6 / span 1', gridColumn: '1 / span 6'}} onClick={handleSubmit}/>
         </Form>
     )
 }
