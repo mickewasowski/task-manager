@@ -12,7 +12,7 @@ export const Form = styled.form`
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(6, 1fr);
 
-    @media (min-width: 375px) {
+    @media (min-width: 375px) AND (max-width: 1024px) {
         grid-column: 1 / span 3;
         grid-row: 1 / span 4;
     }

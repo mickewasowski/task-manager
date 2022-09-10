@@ -10,11 +10,12 @@ export const Wrapper = styled.div`
     grid-column: 1 / span 1;
     grid-row: 1 / span 12;
 
-    @media (min-width: 375px) {
+    overflow-y: auto;
+
+    @media (min-width: 375px) AND (max-width: 1024px) {
         grid-column: 1 / span 3;
         grid-row: 1 / span 3;
         ${'' /* grid-row: auto; */}
-        overflow-y: auto;
     }
 `
 
@@ -26,9 +27,10 @@ export const Heading = styled.h2`
     border-top-right-radius: 10px;
     color: white;
 
-    @media (min-width: 375px) {
+    position: sticky;
+    top: 0;
+
+    @media (min-width: 375px) AND (max-width: 1024px) {
         height: 2.5rem;
-        position: sticky;
-        top: 0;
     }
 `

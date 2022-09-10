@@ -8,7 +8,7 @@ export const AppContainer = styled.div`
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(12, 1fr);
 
-    @media (min-width: 375px) {
+    @media (min-width: 375px) AND (max-width: 1024px) {
         width: 100%;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: auto;
