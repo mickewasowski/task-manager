@@ -3,10 +3,12 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
     background-color: white;
     margin: .7rem .7rem;
-    width: 30%;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 12;
 `
 
 export const Heading = styled.h2`
