@@ -1,16 +1,15 @@
 import styled from 'styled-components';
 
 export const Form = styled.form`
-    width: 20%;
-    height: 23%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-top: 2rem;
-    margin-left: 2rem;
     background-color: #E6E6E6;
     border-radius: 10px;
     padding: 1rem;
+    
+    grid-column: 1 / span 2;
+    grid-row: 5 / span 4;
 `
 
 export const InputWrapper = styled.div`
