@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-    ${'' /* display: flex;
-    justify-content: space-between; */}
     background-color: #D1D5DB;
     border-radius: 10px;
 
@@ -12,4 +10,10 @@ export const Wrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(12, 1fr);
+
+    @media (min-width: 375px) {
+        grid-column: 1 / span 3;
+        grid-row: auto;
+        ${'' /* 5 / span 8 */}
+    }
 `

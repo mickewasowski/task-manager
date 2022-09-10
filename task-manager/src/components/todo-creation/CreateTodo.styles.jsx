@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 
 export const Form = styled.form`
-    ${'' /* display: flex;
-    flex-direction: column;
-    justify-content: space-between; */}
     background-color: #E6E6E6;
     border-radius: 10px;
     padding: 1rem;
@@ -14,6 +11,11 @@ export const Form = styled.form`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(6, 1fr);
+
+    @media (min-width: 375px) {
+        grid-column: 1 / span 3;
+        grid-row: 1 / span 4;
+    }
 `
 
 export const InputWrapper = styled.div`
